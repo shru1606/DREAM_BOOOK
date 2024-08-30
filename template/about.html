@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock title %}
+{% block body %}
+
+<style>
+    /* About Section Styles */
+    .about-section {
+        padding: 50px 20px;
+        background-color: #f4f4f9;
+        text-align: center;
+        color: #333;
+    }
+
+    .about-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #343a40;
+    }
+
+    .about-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        color: #555;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .about-section .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .about-section .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="about-section">
+    <h2>About Us</h2>
+    <p>
+        Welcome to our platform! We're passionate about bringing the best content and experiences to our users. Our journey started with a simple idea: to make information accessible, engaging, and empowering for everyone. From humble beginnings, we've grown into a dedicated team committed to excellence and innovation.
+    </p>
+    <p>
+        At our core, we believe in the power of knowledge and the importance of community. We strive to create a space where learning is not just a process, but a journey filled with inspiration and creativity. Whether you're here to explore, learn, or connect, we're here to support you every step of the way.
+    </p>
+    <p>
+        Thank you for being a part of our story. We look forward to growing together and making a positive impact on the world, one step at a time.
+    </p>
+    
+</div>
+
+{% endblock body %}

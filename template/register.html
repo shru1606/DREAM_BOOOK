@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #efeaee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #f498e3;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-container .form-control {
+            margin-bottom: 15px;
+        }
+        .form-container .btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post" action="/register/">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required autofocus>
+            <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            <div class="login-link">
+                <p> have an account? <a href="/login">login here</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Optional: Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/2Y9wLk5p5vn2aT2SpZIHQF8Fgp8vjF8m7tW5DgF4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-dU2ZCvA1Uq6Im9wtWfB7AuZzTQxH93bqie59p3B8RfU8G9Jw7wN4HBkZdM5Mc1H5b" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-FJwDIIhE9ySFiYioOkpAibccZKjWqT1Gq+38/QkqUqxtfD9X+2yOjoW2pE4I8Gx" crossorigin="anonymous"></script>
+</body>
+</html>

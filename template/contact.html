@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}contact{% endblock title %}
+{% block body %} 
+<div class="container-fluid  px-0" style="height: 15em;" >
+          <img src="{% static 'img/four.avif' %}" class="d-block w-100 h-100 img-fluid" alt="sorry no img found">
+</div>
+<div class="container my-2 py-4 ">
+<h1 class="text-center">Contact Us</h1>
+<div class="d-flex justify-content-center">
+    <form class="w-75" method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="name" class="form-control" id="name" name = "name" placeholder="Enter your name ">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name = "email" placeholder="name@example.com">
+          </div>
+        
+          <div class="form-group">
+            <label for="phone">phone number</label>
+            <input type="phone" class="form-control" id="phone" name = "phone" placeholder="Enter your contact number">
+          </div>
+
+        <div class="form-group">
+          <label for="desc ">Tell me what u want to ask</label>
+          <textarea class="form-control" id="desc" name ="desc" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" >Submit</button>
+      </form>
+          
+       
+        
+</div>
+</div>
+
+{% endblock body %}

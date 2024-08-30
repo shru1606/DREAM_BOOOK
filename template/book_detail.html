@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}details{% endblock title %}
+{% block body %}
+<div class="container my-3 px-0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0a0f7;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .book-info {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .book-info img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .book-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #495057;
+        }
+        .book-info .price {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .book-info button {
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .book-info button:hover {
+            background-color: #218838;
+        }
+        .book-info a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1em;
+        }
+        .book-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="book-info">
+        <h1>{{ book.title }}</h1>
+        <p>Author: {{ book.author }}</p>
+        <p>Description: {{ book.description }}</p>
+        <p class="price">Price: Rs{{ book.price }}</p>
+        <img src="{{ book.image.url }}" alt="{{ book.title }}">
+        <!-- Buy Book Link to Redirect to buy_book.html -->
+        <a href="{% url 'buy_book' book.pk %}" class="btn btn-sm btn-outline-secondary">Buy</a>
+    
+        
+        
+        <a href="{% url 'sell_book' %}">Sell your book</a>
+    </div>
+    {% endblock body %}
+</div>
