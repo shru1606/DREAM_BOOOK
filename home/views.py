@@ -19,70 +19,10 @@ def index(request):
         return redirect("/login")
     return render(request , "index.html")
 
-def about(request):
-    return render(request , "about.html")
+
 
 # Register User View
-def registeruser(request):
-    if request.method == "POST":
-        email = request.POST.get("email")
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        confirm_password = request.POST.get("confirm_password")
-        
-        # Check if passwords match
-        if password != confirm_password:
-            messages.error(request, "Passwords do not match!")
-            return render(request, "register.html")
-        
-        # Check if username already exists
-        if User.objects.filter(username=username).exists():
-            messages.error(request, "Username already exists!")
-            return render(request, "register.html")
-        if User.objects.filter(email=email).exists():
-            messages.error(request, "email already exists!")
-            return render(request, "register.html")
 
-        # Create a new user
-        user = User.objects.create_user(email=email ,username=username, password=password)
-        user.save()
-        messages.success(request, "Registration successful! Please log in.")
-        return redirect("/login")  # Redirect to login page after successful registration
-    
-    return render(request, "register.html")
-    
-def loginuser(request):
-    if request.method=="POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request , user)
-    # A backend authenticated the credentials
-            return redirect("/")
-        else:
-            # No backend authenticated the credentials
-            messages.error(request, "Invalid username or password")
-            return render(request , "login.html")
-
-
-    return render(request , "login.html")
-    
-def logoutuser(request):
-    logout(request)
-    return redirect("/login")
-
-def contact(request):
-    if request.method=="POST":
-        name= request.POST.get('name')
-        email= request.POST.get('email')
-        phone= request.POST.get('phone')
-        desc= request.POST.get('desc')
-        contact = Contact(name=name , email=email , phone=phone ,desc=desc , date= datetime.today() )
-        contact.save()
-        messages.success(request, "contacts details updated.")
-        
-    return render(request , "contact.html" )
 
 def book_detail(request, pk):
     book = get_object_or_404(Book, pk=pk)
